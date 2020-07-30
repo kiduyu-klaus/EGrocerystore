@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">E-Grocery Store</string>
+
+    <string name="splash_text">Find, Discover, Choose and Buy Groceries online.</string>
+    <string name="splash_button1">Join Now</string>
+    <string name="splash_button2">Already have an Account? Login</string>
+
+    <string name="register_name_hint">Input Name:</string>
+    <string name="register_phone_hint">Input Number:</string>
+    <string name="register_password_hint">Input Password:</string>
+    <string name="register_pass_confirm_hint">Confirm Password:</string>
+
+    <string name="navigation_drawer_open">Open navigtion drawer</string>
+    <string name="navigation_drawer_close">close navigtion drawer</string>
+
+    <string-array name="profile_dropdown">
+        <item>Choose location</item>
+        <item>Dedan Kimathi</item>
+        <item>Kingongo</item>
+        <item>Kamakwa</item>
+        <item>Kingongo</item>
+        <item>Skuta</item>
+        <item>Nyeri Town</item>
+        <item>Mweiga</item>
+        <item>Murigato</item>
+        <item>Nyeri Uptown</item>
+        <item>Near kingongo Prisons</item>
+        <item>Near Naivas Supermarket</item>
+    </string-array>
+    <string name="title_activity_maps">Map</string>
+
+
+    <string name="dedan_kimathi">-0.393794,36.955898</string>
+    <string name="kingongo">-0.413747,36.955328</string>
+    <string name="kamakwa">-0.428061,36.931601</string>
+    <string name="skuta">-0.435504,36.973551</string>
+    <string name="nyeri">-0.435504,36.973551</string>
+    <string name="near_naivas">-0.424593,36.955366</string>
+    <string name="stage_kimathi">-0.421171,36.950677</string>
+    <string name="near_prisons">-0.415538,36.958402</string>
+    <string name="murigato">-0.403018,36.945495</string>
+    <string name="muiga">-0.316892,36.9006925</string>
+
+</resources>
