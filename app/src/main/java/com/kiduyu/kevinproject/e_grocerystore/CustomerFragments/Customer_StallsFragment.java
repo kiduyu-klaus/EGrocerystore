@@ -17,7 +17,7 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.kiduyu.kevinproject.e_grocerystore.MapsActivity;
+import com.kiduyu.kevinproject.e_grocerystore.Activities.MapsActivity;
 import com.kiduyu.kevinproject.e_grocerystore.R;
 import com.kiduyu.kevinproject.e_grocerystore.model.Data;
 

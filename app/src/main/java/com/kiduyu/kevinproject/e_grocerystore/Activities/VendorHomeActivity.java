@@ -14,8 +14,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
+import com.kiduyu.kevinproject.e_grocerystore.CustomerFragments.Customer_SignoutFragment;
 import com.kiduyu.kevinproject.e_grocerystore.R;
 import com.kiduyu.kevinproject.e_grocerystore.VendorFragments.HomeFragment;
+import com.kiduyu.kevinproject.e_grocerystore.VendorFragments.Vendor_GroceriesFragment;
+import com.kiduyu.kevinproject.e_grocerystore.VendorFragments.Vendor_StallsFragment;
 import com.kiduyu.kevinproject.e_grocerystore.model.Prevalent;
 
 public class VendorHomeActivity extends AppCompatActivity {
@@ -50,7 +53,7 @@ public class VendorHomeActivity extends AppCompatActivity {
 
                         break;
 
-                   /* case R.id.nav_signout:
+                    case R.id.nav_signout:
                         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                                 new Customer_SignoutFragment()).commit();
 
@@ -67,8 +70,6 @@ public class VendorHomeActivity extends AppCompatActivity {
                                 new Vendor_GroceriesFragment()).commit();
 
                         break;
-
-                    */
 
                     case R.id.nav_share:
 
@@ -93,7 +94,7 @@ public class VendorHomeActivity extends AppCompatActivity {
         toggle.syncState();
         if (savedInstanceState== null){
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                    new HomeFragment()).commit();
+                    new Vendor_StallsFragment()).commit();
             navigationView.setCheckedItem(R.id.nav_stalls);}
 
 

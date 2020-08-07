@@ -1,5 +1,5 @@
 package com.kiduyu.kevinproject.e_grocerystore.model;
-
+import com.kiduyu.kevinproject.e_grocerystore.model.Users;
 
 public class Prevalent {
         public static Users currentOnlineUser;

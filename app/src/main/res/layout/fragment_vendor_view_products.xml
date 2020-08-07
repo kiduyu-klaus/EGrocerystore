@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+   <androidx.coordinatorlayout.widget.CoordinatorLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:orientation="vertical"
+           android:layout_margin="10dp"
+           android:layout_height="match_parent">
+
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:padding="10dp"
+               android:layout_margin="5dp"
+               android:background="@drawable/inputs"
+               android:text="My Stalls Details"
+               android:gravity="center"
+               android:textAppearance="@style/TextAppearance.AppCompat"
+               android:textSize="20sp"/>
+
+
+           <androidx.recyclerview.widget.RecyclerView
+               android:layout_width="match_parent"
+               android:id="@+id/recycler_product_stalls_detail"
+               android:layout_height="wrap_content">
+
+           </androidx.recyclerview.widget.RecyclerView>
+
+           <LinearLayout
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal">
+               <RelativeLayout
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1">
+                   <TextView
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:padding="10dp"
+                       android:layout_margin="5dp"
+                       android:text="Produsts Available"
+                       android:gravity="center"
+                       android:textAppearance="@style/TextAppearance.AppCompat"
+                       android:textSize="20sp"/>
+               </RelativeLayout>
+               <RelativeLayout
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:gravity="end"
+                   android:layout_weight="2">
+                   <Button
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:padding="10dp"
+                       android:layout_margin="5dp"
+                       android:background="@drawable/buttons"
+                       android:text="Locate"
+                       android:id="@+id/stall_map_location"
+                       android:textColor="@android:color/white"
+                       android:gravity="center"
+                       android:textAppearance="@style/TextAppearance.AppCompat"
+                       android:textSize="20sp"/>
+               </RelativeLayout>
+
+           </LinearLayout>
+
+
+           <androidx.recyclerview.widget.RecyclerView
+               android:layout_width="match_parent"
+               android:id="@+id/recycler_home_products"
+               android:layout_height="wrap_content">
+
+           </androidx.recyclerview.widget.RecyclerView>
+
+       </LinearLayout>
+
+       <com.google.android.material.floatingactionbutton.FloatingActionButton
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_gravity="bottom|end"
+           android:layout_margin="15dp"
+           app:fabSize="normal"
+           android:src="@drawable/plus"
+           android:id="@+id/fab_add"
+           android:backgroundTint="#FFFF8940"
+           />
+
+   </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</RelativeLayout>

@@ -14,6 +14,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
+import com.kiduyu.kevinproject.e_grocerystore.CustomerFragments.Customer_HomeFragment;
+import com.kiduyu.kevinproject.e_grocerystore.CustomerFragments.Customer_ProductsFragment;
+import com.kiduyu.kevinproject.e_grocerystore.CustomerFragments.Customer_SignoutFragment;
 import com.kiduyu.kevinproject.e_grocerystore.CustomerFragments.Customer_StallsFragment;
 import com.kiduyu.kevinproject.e_grocerystore.R;
 import com.kiduyu.kevinproject.e_grocerystore.model.Prevalent;
@@ -44,7 +47,7 @@ public class CustomerHomeActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem Item) {
                 switch (Item.getItemId()) {
-                   /* case R.id.customer_nav_home:
+                    case R.id.customer_nav_home:
                         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                                 new Customer_HomeFragment()).commit();
 
@@ -77,9 +80,7 @@ public class CustomerHomeActivity extends AppCompatActivity {
                         Toast.makeText(CustomerHomeActivity.this, "Send this app", Toast.LENGTH_SHORT).show();
                         break;
 
-                    */
                 }
-
 
                 drawer.closeDrawer(GravityCompat.START);
                 return true;

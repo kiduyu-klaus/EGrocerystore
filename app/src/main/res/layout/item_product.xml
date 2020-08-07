@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="7dp"
+    app:cardElevation="6dp"
+    android:elevation="6dp"
+    android:layout_height="150dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@color/colorPrimaryDark"
+                android:padding="10dp"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:id="@+id/item_grocery_image"
+                android:textColor="#FFB640FF"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Title: Name"
+                android:textAlignment="center"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:id="@+id/item_grocery_title"
+                android:layout_margin="5dp"
+                android:maxLines="1"
+                android:padding="5dp"
+                android:textColor="@android:color/black"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Note: Per Piece"
+                android:maxLines="1"
+                android:textAlignment="center"
+                android:layout_margin="5dp"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:id="@+id/item_grocery_note"
+                android:layout_below="@+id/item_grocery_title"
+                android:padding="5dp"
+                android:textColor="@android:color/black"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Price: 5000"
+                android:textAlignment="center"
+                android:layout_margin="5dp"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:id="@+id/item_grocery_amount"
+                android:layout_below="@+id/item_grocery_note"
+                android:padding="5dp"
+                android:textColor="@android:color/black"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Stock: 20 "
+                android:textAlignment="center"
+                android:layout_margin="5dp"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:id="@+id/item_groceryadd_stock"
+                android:padding="5dp"
+                android:textColor="@android:color/black"
+                />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_tick"
+                android:layout_below="@+id/item_grocery_stock"
+                android:layout_margin="5dp"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:id="@+id/grocery_stall_name"
+                android:padding="5dp"
+                android:textColor="@android:color/black"
+                />
+
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+</com.google.android.material.card.MaterialCardView>
