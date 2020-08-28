@@ -16,8 +16,8 @@
             android:icon="@drawable/ic_stall"
             android:title="Stalls Near You"/>
         <item android:id="@+id/customer_nav_products"
-            android:icon="@drawable/ic_diet"
-            android:title="Products"/>
+            android:icon="@drawable/ic_cart"
+            android:title="My Cart"/>
 
         <item android:id="@+id/customer_nav_signout"
             android:icon="@drawable/ic_powe"

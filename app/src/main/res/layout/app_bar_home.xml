@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorWhite"
-    tools:context=".Activities.CustomerHomeActivity">
+    android:background="@color/colorWhite">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
@@ -122,7 +121,7 @@
             tools:showIn="@layout/app_bar_home">
 
             <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/fragment_frame"
+                android:id="@+id/fragment_container"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 

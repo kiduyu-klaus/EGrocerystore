@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -27,12 +27,78 @@
                android:textSize="20sp"/>
 
 
-           <androidx.recyclerview.widget.RecyclerView
+           <LinearLayout
                android:layout_width="match_parent"
-               android:id="@+id/recycler_product_stalls_detail"
+               android:orientation="vertical"
                android:layout_height="wrap_content">
+               <RelativeLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:id="@+id/rev1"
+                   android:layout_margin="8dp">
 
-           </androidx.recyclerview.widget.RecyclerView>
+                   <TextView
+                       android:id="@+id/fetch_stallname"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:text="Mama Rose Store"
+                       android:textAlignment="center"
+                       android:textSize="20dp"
+                       android:textStyle="bold"
+                       android:textColor="@color/colorPrimary"
+                       />
+
+                   <ImageView
+                       android:id="@+id/fetch_stallimage"
+                       android:layout_width="match_parent"
+                       android:layout_height="150dp"
+                       android:layout_below="@+id/fetch_stallname"
+                       android:src="@drawable/login2"
+                       android:scaleType="centerCrop"
+                       android:layout_marginTop="2dp"
+                       />
+
+                   <TextView
+                       android:id="@+id/fetch_stalllocation"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:layout_below="@+id/fetch_stallimage"
+                       android:text="location: skuta"
+                       android:textAlignment="center"
+                       android:textSize="18dp"
+                       android:textColor="@color/colorPrimaryDark"
+                       />
+
+                   <TextView
+                       android:id="@+id/fetch_stalldescription"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:layout_below="@+id/fetch_stalllocation"
+                       android:text="Fresh Vegetables Sold here.situated near beavers along nyeri karatina food"
+                       android:layout_marginTop="2dp"
+                       android:textAlignment="center"
+                       android:textSize="16dp"
+                       android:textColor="@color/colorPrimaryDark"
+                       />
+
+
+
+               </RelativeLayout>
+
+               <RelativeLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:padding="10dp"
+                   android:layout_gravity="center"
+                   android:gravity="center"
+                   android:layout_margin="5dp">
+
+
+
+
+               </RelativeLayout>
+
+           </LinearLayout>
 
            <LinearLayout
                android:layout_width="wrap_content"
@@ -90,9 +156,9 @@
            android:layout_margin="15dp"
            app:fabSize="normal"
            android:src="@drawable/plus"
-           android:id="@+id/fab_add"
+           android:id="@+id/fab_add_products"
            android:backgroundTint="#FFFF8940"
            />
 
    </androidx.coordinatorlayout.widget.CoordinatorLayout>
-</RelativeLayout>
+</ScrollView>

@@ -12,8 +12,8 @@
             android:icon="@drawable/ic_stall"
             android:title="Add New Stalls"/>
         <item android:id="@+id/nav_products"
-            android:icon="@drawable/ic_diet"
-            android:title="Add New Groceries"/>
+            android:icon="@drawable/ic_person"
+            android:title="Profile"/>
         <item android:id="@+id/nav_signout"
             android:icon="@drawable/ic_powe"
             android:title="SignOut"/>

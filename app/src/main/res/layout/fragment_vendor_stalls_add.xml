@@ -19,9 +19,10 @@
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
                android:padding="10dp"
+               android:id="@+id/my_stals_titles"
                android:layout_margin="5dp"
                android:background="@drawable/inputs"
-               android:text="My Stalls"
+               android:text="My Stall"
                android:gravity="center"
                android:textAppearance="@style/TextAppearance.AppCompat"
                android:textSize="20sp"/>
@@ -30,7 +31,27 @@
            <androidx.recyclerview.widget.RecyclerView
                android:layout_width="match_parent"
                android:id="@+id/recycler_home"
-               android:layout_height="match_parent">
+               android:layout_height="wrap_content">
+
+           </androidx.recyclerview.widget.RecyclerView>
+
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:padding="10dp"
+               android:layout_margin="5dp"
+               android:background="@drawable/inputs"
+               android:text="Stall Products"
+               android:visibility="invisible"
+               android:gravity="center"
+               android:textAppearance="@style/TextAppearance.AppCompat"
+               android:textSize="20sp"/>
+
+           <androidx.recyclerview.widget.RecyclerView
+               android:layout_width="match_parent"
+               android:id="@+id/recycler_home_products"
+               android:visibility="invisible"
+               android:layout_height="wrap_content">
 
            </androidx.recyclerview.widget.RecyclerView>
 

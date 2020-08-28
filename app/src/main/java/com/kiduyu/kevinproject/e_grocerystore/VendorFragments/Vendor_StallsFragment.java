@@ -1,6 +1,5 @@
 package com.kiduyu.kevinproject.e_grocerystore.VendorFragments;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,8 +11,8 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -25,24 +24,24 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.kiduyu.kevinproject.e_grocerystore.R;
 import com.kiduyu.kevinproject.e_grocerystore.model.Data;
 import com.kiduyu.kevinproject.e_grocerystore.model.Prevalent;
+import com.kiduyu.kevinproject.e_grocerystore.R;
 import com.squareup.picasso.Picasso;
-
-import org.w3c.dom.Text;
 
 public class Vendor_StallsFragment extends Fragment {
     private RecyclerView recyclerView;
     private DatabaseReference mDatabase;
+    TextView my_stals_titles;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view= inflater.inflate(R.layout.fragment_vendor_stalls_add,container,false);
 
         FloatingActionButton fab_add= view.findViewById(R.id.fab_add);
+        my_stals_titles=view.findViewById(R.id.my_stals_titles);
 
-        mDatabase= FirebaseDatabase.getInstance().getReference().child("stalls").child(Prevalent.currentOnlineVendor.getPhone());
+        mDatabase= FirebaseDatabase.getInstance().getReference().child("stalls");
         mDatabase.keepSynced(true);
 
         fab_add.setOnClickListener(new View.OnClickListener() {
@@ -70,27 +69,61 @@ public class Vendor_StallsFragment extends Fragment {
 
         FirebaseRecyclerAdapter<Data,StallsViewHolder> adapter= new FirebaseRecyclerAdapter<Data, StallsViewHolder>(option) {
             @Override
-            protected void onBindViewHolder(@NonNull final StallsViewHolder holder, int position, @NonNull Data model) {
-                holder.name.setText("Stall Name: "+model.getName());
-                holder.location.setText("Stall Location: "+model.getLocation());
-                holder.description.setText(model.getDescription());
-                String ImageView= model.getImage().toString();
-                Picasso.get().load(ImageView).into(holder.imageview);
+            protected void onBindViewHolder(@NonNull final StallsViewHolder holder, int position, @NonNull final Data model) {
 
-                holder.edit_product.setOnClickListener(new View.OnClickListener() {
+                mDatabase.child(Prevalent.currentOnlineVendor.getPhone()).addValueEventListener(new ValueEventListener() {
                     @Override
-                    public void onClick(View v) {
-                        Toast.makeText(getActivity(), "Edit is Clicked", Toast.LENGTH_SHORT).show();
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        if (dataSnapshot.hasChild("name")){
+                            String product_name = dataSnapshot.child("name").getValue().toString();
+                            String product_description = dataSnapshot.child("description").getValue().toString();
+                            String product_location = dataSnapshot.child("location").getValue().toString();
+                            String product_image = dataSnapshot.child("image").getValue().toString();
+
+
+                            holder.name.setText("Stall Name: "+product_name);
+                            holder.location.setText("Stall Location: "+product_location);
+                            holder.description.setText(product_description);
+                            String ImageView= product_image.toString();
+                            Picasso.get().load(ImageView).into(holder.imageview);
+
+                            holder.edit_product.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    Toast.makeText(getActivity(), "Edit is Clicked", Toast.LENGTH_SHORT).show();
+                                }
+                            });
+
+                            holder.view_product.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    FragmentManager fm = getActivity().getSupportFragmentManager();
+                                    Bundle arguments = new Bundle();
+                                    arguments.putString("mname",model.getName());
+                                    arguments.putString("mlocation",model.getLocation());
+                                    arguments.putString("mdescription",model.getDescription());
+                                    arguments.putString("mimge",model.getImage());
+                                    Stall_DetailsFragment stall_detailsFragment = new Stall_DetailsFragment();
+                                    stall_detailsFragment.setArguments(arguments);
+                                    fm.beginTransaction().replace(R.id.fragment_container,stall_detailsFragment).commit();
+
+                                }
+                            });
+
+                        }
+                        else{
+                            holder.itemView.setVisibility(View.INVISIBLE);
+                            my_stals_titles.setText("No Stalls Added");
+                        }
+
+                    }
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
                     }
                 });
 
-                holder.view_product.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                     new Stall_DetailsFragment() ).commit();
-                    }
-                });
+
 
 
             }

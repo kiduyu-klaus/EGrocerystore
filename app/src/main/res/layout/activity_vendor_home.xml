@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:id="@+id/vendor_drawer_layout"
     android:fitsSystemWindows="true"
-    tools:context=".Activities.VendorHomeActivity"
+    tools:context="com.moseh.e_groceryapp.Activities.VendorHomeActivity"
     tools:openDrawer="start">
 
     <LinearLayout

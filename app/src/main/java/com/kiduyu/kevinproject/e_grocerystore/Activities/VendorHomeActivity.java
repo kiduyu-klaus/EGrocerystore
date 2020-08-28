@@ -15,11 +15,12 @@ import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 import com.kiduyu.kevinproject.e_grocerystore.CustomerFragments.Customer_SignoutFragment;
-import com.kiduyu.kevinproject.e_grocerystore.R;
 import com.kiduyu.kevinproject.e_grocerystore.VendorFragments.HomeFragment;
 import com.kiduyu.kevinproject.e_grocerystore.VendorFragments.Vendor_GroceriesFragment;
 import com.kiduyu.kevinproject.e_grocerystore.VendorFragments.Vendor_StallsFragment;
 import com.kiduyu.kevinproject.e_grocerystore.model.Prevalent;
+import com.kiduyu.kevinproject.e_grocerystore.R;
+
 
 public class VendorHomeActivity extends AppCompatActivity {
     private DrawerLayout drawer;

@@ -3,9 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/colorWhite"
-    tools:context="">
+    android:layout_height="match_parent">
 
     <!-- TODO: Update blank fragment layout -->
     <ScrollView
@@ -20,30 +18,27 @@
             android:orientation="vertical">
 
             <RelativeLayout
-                android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
                 android:layout_margin="5dp"
 
-                >
+                ><androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="5dp">
 
-                <androidx.viewpager.widget.ViewPager
-                    android:id="@+id/viewPager"
+                <ImageView
+                    android:id="@+id/imageView"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-
-                <com.google.android.material.tabs.TabLayout
-                    android:id="@+id/tabview"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_centerHorizontal="true"
-                    app:tabBackground="@drawable/tab_selector"
-                    app:tabIndicatorGravity="center" />
+                    android:layout_height="match_parent"
+                    android:src="@drawable/display"
+                    android:scaleType="fitXY" />
+            </androidx.cardview.widget.CardView>
             </RelativeLayout>
 
             <LinearLayout
-                android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">

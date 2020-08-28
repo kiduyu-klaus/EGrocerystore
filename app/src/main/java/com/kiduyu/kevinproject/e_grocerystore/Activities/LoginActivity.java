@@ -18,10 +18,11 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.kiduyu.kevinproject.e_grocerystore.R;
 import com.kiduyu.kevinproject.e_grocerystore.model.Prevalent;
 import com.kiduyu.kevinproject.e_grocerystore.model.Users;
 import com.kiduyu.kevinproject.e_grocerystore.model.Vendor;
+import com.kiduyu.kevinproject.e_grocerystore.R;
+
 import com.rey.material.widget.CheckBox;
 
 import io.paperdb.Paper;

@@ -24,9 +24,90 @@
                 android:text="Products Ready For Purchase"
                 android:gravity="center"
                 android:textColor="@color/colorPrimary"
-                android:textAppearance="@style/TextAppearance.AppCompat"
-                android:textSize="20sp"/>
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textSize="22sp"/>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rev1"
+                    android:layout_margin="8dp">
+
+                    <TextView
+                        android:id="@+id/fetch_stallname"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Mama Rose Store"
+                        android:textAlignment="center"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorPrimary"
+                        />
+
+                    <ImageView
+                        android:id="@+id/fetch_stallimage"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_below="@+id/fetch_stallname"
+                        android:src="@drawable/login2"
+                        android:scaleType="centerCrop"
+                        android:layout_marginTop="2dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/fetch_stalllocation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/fetch_stallimage"
+                        android:text="location: skuta"
+                        android:textAlignment="center"
+                        android:textSize="18dp"
+                        android:textColor="@color/colorPrimaryDark"
+                        />
+
+                    <TextView
+                        android:id="@+id/fetch_stalldescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/fetch_stalllocation"
+                        android:text="Fresh Vegetables Sold here.situated near beavers along nyeri karatina food"
+                        android:layout_marginTop="2dp"
+                        android:textAlignment="center"
+                        android:textSize="16dp"
+                        android:textColor="@color/colorPrimaryDark"
+                        />
+
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_margin="5dp">
+
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:id="@+id/customer_products_title"
+                android:layout_margin="5dp"
+                android:text="Products For Stall"
+                android:gravity="center"
+                android:textColor="@color/colorPrimary"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"

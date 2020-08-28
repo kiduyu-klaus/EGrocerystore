@@ -10,14 +10,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.MimeTypeMap;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
-
-import static android.app.Activity.RESULT_OK;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -33,12 +30,14 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
-import com.kiduyu.kevinproject.e_grocerystore.R;
 import com.kiduyu.kevinproject.e_grocerystore.model.Data;
 import com.kiduyu.kevinproject.e_grocerystore.model.Prevalent;
+import com.kiduyu.kevinproject.e_grocerystore.R;
 
 import java.text.DateFormat;
 import java.util.Date;
+
+import static android.app.Activity.RESULT_OK;
 
 public class Add_StallsFragment extends Fragment {
     private static final int PICK_IMAGE_REQUEST=1;
@@ -119,8 +118,8 @@ public class Add_StallsFragment extends Fragment {
                                     RootRef.addListenerForSingleValueEvent(new ValueEventListener() {
                                         @Override
                                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                            if (!(dataSnapshot.child(mphone).child(mname).exists())){
-                                                RootRef.child(mphone).child(mname).setValue(data);
+                                            if (!(dataSnapshot.child(mphone).child("name").exists())){
+                                                RootRef.child(mphone).setValue(data);
                                                 Toast.makeText(getActivity(),mname+" Added Successfully",Toast.LENGTH_SHORT).show();
 
                                                 loadingBar.dismiss();
@@ -128,7 +127,8 @@ public class Add_StallsFragment extends Fragment {
                                                         new Vendor_StallsFragment()).commit();
                                             }else{
                                                 Toast.makeText(getActivity(),mname+" Already On the List",Toast.LENGTH_LONG).show();
-
+                                                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                                                        new Vendor_StallsFragment()).commit();
                                                 loadingBar.dismiss();
                                             }
                                         }

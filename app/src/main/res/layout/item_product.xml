@@ -1,117 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView
+<LinearLayout android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_margin="7dp"
-    app:cardElevation="6dp"
-    android:elevation="6dp"
-    android:layout_height="150dp">
+    xmlns:app="http://schemas.android.com/tools"
+    app:ignore="NamespaceTypo">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:padding="10dp"
-        android:layout_height="wrap_content">
+    <androidx.cardview.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="120dp"
+        android:layout_height="221dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp"
+        android:elevation="6dp"
+        card_view:cardCornerRadius="6dp">
 
-        <RelativeLayout
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@color/colorPrimaryDark"
-                android:padding="10dp"
-                android:textAppearance="?android:textAppearanceSmall"
-                android:id="@+id/item_grocery_image"
-                android:textColor="#FFB640FF"
-                />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="0dp"
-            android:layout_weight="2"
-            android:layout_gravity="center"
-            android:layout_height="wrap_content">
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:id="@+id/item_product_image"
+                android:src="@drawable/splash" />
 
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Cabbage"
+                android:id="@+id/item_product_name"
+                android:textColor="@color/colorProduct"
+                android:textSize="14sp" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:background="#d9d9d9"/>
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Title: Name"
-                android:textAlignment="center"
-                android:textAppearance="?android:textAppearanceMedium"
-                android:id="@+id/item_grocery_title"
-                android:layout_margin="5dp"
-                android:maxLines="1"
-                android:padding="5dp"
-                android:textColor="@android:color/black"
-                />
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:text="Ksh.25487"
+                        android:textSize="14sp"
+                        android:id="@+id/item_product_desc"
+                        android:textAlignment="center"
+                        android:textColor="#d41031"
+                        android:translationX="2dp"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:text="Ksh.25487"
+                        android:textSize="14sp"
+                        android:id="@+id/item_product_price"
+                        android:textAlignment="center"
+                        android:textColor="#d41031"
+                        android:translationX="2dp"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:gravity="center"
+                        android:id="@+id/item_cust_product_addtocart"
+                        android:background="@color/colorPrimary"
+                        android:textColor="@android:color/white"
+                        android:layout_margin="4dp"
+                        android:text="Add To Cart"
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Note: Per Piece"
-                android:maxLines="1"
-                android:textAlignment="center"
-                android:layout_margin="5dp"
-                android:textAppearance="?android:textAppearanceSmall"
-                android:id="@+id/item_grocery_note"
-                android:layout_below="@+id/item_grocery_title"
-                android:padding="5dp"
-                android:textColor="@android:color/black"
-                />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Price: 5000"
-                android:textAlignment="center"
-                android:layout_margin="5dp"
-                android:textAppearance="?android:textAppearanceMedium"
-                android:id="@+id/item_grocery_amount"
-                android:layout_below="@+id/item_grocery_note"
-                android:padding="5dp"
-                android:textColor="@android:color/black"
-                />
+                        android:layout_marginBottom="2dp"/>
 
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Stock: 20 "
-                android:textAlignment="center"
-                android:layout_margin="5dp"
-                android:textAppearance="?android:textAppearanceMedium"
-                android:id="@+id/item_groceryadd_stock"
-                android:padding="5dp"
-                android:textColor="@android:color/black"
-                />
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_tick"
-                android:layout_below="@+id/item_grocery_stock"
-                android:layout_margin="5dp"
-                android:textAppearance="?android:textAppearanceMedium"
-                android:id="@+id/grocery_stall_name"
-                android:padding="5dp"
-                android:textColor="@android:color/black"
-                />
+                </LinearLayout>
 
 
 
-        </RelativeLayout>
-
-
-    </LinearLayout>
-
-
-</com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

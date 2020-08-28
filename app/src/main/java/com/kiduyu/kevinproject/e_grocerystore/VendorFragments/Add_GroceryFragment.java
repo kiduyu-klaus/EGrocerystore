@@ -1,14 +1,14 @@
 package com.kiduyu.kevinproject.e_grocerystore.VendorFragments;
 
+import android.app.ProgressDialog;
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.app.ProgressDialog;
-import android.text.TextUtils;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.EditText;
@@ -29,10 +29,10 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
-import com.kiduyu.kevinproject.e_grocerystore.R;
 import com.kiduyu.kevinproject.e_grocerystore.model.Data;
 import com.kiduyu.kevinproject.e_grocerystore.model.Grocery;
 import com.kiduyu.kevinproject.e_grocerystore.model.Prevalent;
+import com.kiduyu.kevinproject.e_grocerystore.R;
 import com.squareup.picasso.Picasso;
 
 import java.text.DateFormat;
@@ -189,7 +189,6 @@ public class Add_GroceryFragment extends Fragment {
                                     public void onSuccess(Uri uri) {
                                         final  Uri umageuri = uri;
                                         String imge= umageuri.toString();
-                                        final Grocery grocery = new Grocery(name, price, description, mstall_name, date, stock, imge);
 
                                         final DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child("groceries").child(mstall_name);
 
@@ -198,7 +197,7 @@ public class Add_GroceryFragment extends Fragment {
                                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                 if (!(dataSnapshot.child(name).exists())){
 
-                                                    mDatabase.child(name).setValue(grocery);
+
                                                     Toast.makeText(getActivity(),name+" Added Successfully",Toast.LENGTH_SHORT).show();
                                                     loadingBar.dismiss();
                                                     getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">E-Grocery Store</string>
+    <string name="app_name">E-Grocery</string>
 
     <string name="splash_text">Find, Discover, Choose and Buy Groceries online.</string>
     <string name="splash_button1">Join Now</string>

@@ -1,6 +1,5 @@
 package com.kiduyu.kevinproject.e_grocerystore.VendorFragments;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,17 +16,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-import com.kiduyu.kevinproject.e_grocerystore.CustomerFragments.Customer_ProductsFragment;
-import com.kiduyu.kevinproject.e_grocerystore.R;
 import com.kiduyu.kevinproject.e_grocerystore.model.Grocery;
-import com.kiduyu.kevinproject.e_grocerystore.model.Prevalent;
-import com.squareup.picasso.Picasso;
-
+import com.kiduyu.kevinproject.e_grocerystore.R;
 public class Vendor_GroceriesFragment extends Fragment {
     private RecyclerView recyclerView;
     private DatabaseReference mDatabase;
@@ -75,7 +67,7 @@ public class Vendor_GroceriesFragment extends Fragment {
             } @NonNull
             @Override
             public ProductsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_product, parent, false);
+                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_product_vet, parent, false);
                 return new ProductsViewHolder(view);
             }
         };
@@ -91,11 +83,6 @@ public class Vendor_GroceriesFragment extends Fragment {
         public ProductsViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            pimage=itemView.findViewById(R.id.item_grocery_image);
-            ptitle=itemView.findViewById(R.id.item_grocery_title);
-            pnote=itemView.findViewById(R.id.item_grocery_note);
-            pamount=itemView.findViewById(R.id.item_grocery_amount);
-            pstock=itemView.findViewById(R.id.item_groceryadd_stock);
         }
     }
 }
